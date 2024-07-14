@@ -1,0 +1,35 @@
+Data and Analysis
+Infrastructure investment
+Education expenditure
+Health expenditure
+Industrial growth rate
+GDP growth rate
+
+import numpy as np
+
+ data: Rows represent different states, columns represent different economic indicators
+ Columns: [Infrastructure Investment, Education Expenditure, Health Expenditure, Industrial Growth Rate, GDP Growth Rate]
+ Values are in appropriate units/scales
+leading_states = np.array([
+    [5000, 1500, 1200, 8.0, 7.5],  # State 1
+    [4800, 1400, 1150, 7.8, 7.2],  # State 2
+    [5100, 1600, 1250, 8.1, 7.7],  # State 3
+])
+
+lagging_states = np.array([
+    [3000, 900, 800, 5.5, 4.5],    # State 4
+    [3200, 950, 850, 5.7, 4.8],    # State 5
+    [3100, 920, 820, 5.6, 4.6],    # State 6
+])
+
+# Calculate mean values for each group of states
+mean_leading = np.mean(leading_states, axis=0)
+mean_lagging = np.mean(lagging_states, axis=0)
+
+print("Mean values for leading states:", mean_leading)
+print("Mean values for lagging states:", mean_lagging)
+
+ Calculate the differences to identify opportunities
+differences = mean_leading - mean_lagging
+
+print("Differences between leading and lagging states:", differences)
